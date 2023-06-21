@@ -1,1 +1,0 @@
-# amplify-react-graphql
