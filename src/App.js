@@ -52,16 +52,8 @@ import {
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import "@aws-amplify/ui-react/styles.css";
-import { API } from "aws-amplify";
-import {
-  Button,
-  Flex,
-  Heading,
-  Text,
-  TextField,
-  View,
-  withAuthenticator,
-} from "@aws-amplify/ui-react";
+//import { API } from "aws-amplify";
+
 import { listNotes } from "./graphql/queries";
 import {
   createNote as createNoteMutation,
