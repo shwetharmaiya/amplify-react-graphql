@@ -37,3 +37,42 @@ export const onDeletePost = /* GraphQL */ `
     }
   }
 `;
+export const onCreateMessage = /* GraphQL */ `
+  subscription OnCreateMessage($filter: ModelSubscriptionMessageFilterInput) {
+    onCreateMessage(filter: $filter) {
+      id
+      text
+      username
+      datetime
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onUpdateMessage = /* GraphQL */ `
+  subscription OnUpdateMessage($filter: ModelSubscriptionMessageFilterInput) {
+    onUpdateMessage(filter: $filter) {
+      id
+      text
+      username
+      datetime
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;
+export const onDeleteMessage = /* GraphQL */ `
+  subscription OnDeleteMessage($filter: ModelSubscriptionMessageFilterInput) {
+    onDeleteMessage(filter: $filter) {
+      id
+      text
+      username
+      datetime
+      createdAt
+      updatedAt
+      __typename
+    }
+  }
+`;

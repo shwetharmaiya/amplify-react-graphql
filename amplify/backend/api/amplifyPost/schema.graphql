@@ -7,3 +7,10 @@ type Post @model @auth(rules: [ { allow: public } ] ){
   title: String
   text: String
 }
+
+type Message @model @auth(rules: [ { allow: public } ] ){
+  id: ID!
+  text: String!
+  username: String!	
+  datetime: AWSDateTime
+}

@@ -74,6 +74,11 @@ function App({ signOut }) {
           path: "/profile/:id",
           element: <Profile />,
         },
+        {
+          path: "/messages/:id",
+          element: <Messages />,
+       
+        },
        
       ],
     },

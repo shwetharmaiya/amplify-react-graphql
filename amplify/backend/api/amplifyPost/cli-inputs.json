@@ -5,7 +5,11 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "expirationTime": 7
-    }
+      "expirationTime": 20,
+      "apiKeyExpirationDate": "2023-07-30T06:08:55.642Z",
+      "keyDescription": "Change to include Posts and Messages"
+    },
+    "conflictResolution": {},
+    "additionalAuthTypes": []
   }
 }

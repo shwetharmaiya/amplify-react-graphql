@@ -7,7 +7,9 @@
           "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDate": "2023-07-30T06:08:55.642Z",
+              "apiKeyExpirationDays": 20,
+              "description": "Change to include Posts and Messages"
             },
             "authenticationType": "API_KEY"
           }
