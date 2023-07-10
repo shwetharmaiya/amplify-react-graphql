@@ -10,7 +10,6 @@ import {
   Button,
   Card,
   Heading,
-  Image,
   View,
   withAuthenticator,
 } from '@aws-amplify/ui-react';
@@ -20,13 +19,13 @@ import {
   createBrowserRouter,
   RouterProvider,
   Outlet,
-  Navigate,
 } from "react-router-dom";
 
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Navbar from "./components/navbar/Navbar";
 import LeftBar from "./components/leftBar/LeftBar";
 import RightBar from "./components/rightBar/RightBar";
+import Messages from "./components/messages/Messages";
 
 function App({ signOut }) {
   const queryClient = new QueryClient();
@@ -75,7 +74,7 @@ function App({ signOut }) {
           element: <Profile />,
         },
         {
-          path: "/messages/:id",
+          path: "/messages",
           element: <Messages />,
        
         },

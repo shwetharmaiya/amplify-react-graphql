@@ -13,7 +13,6 @@ import {
 import { listMessages } from "../../graphql/queries";
 import {
   createMessage as createMessageMutation,
-  deleteMessage as deleteMessageMutation,
 } from "../../graphql/mutations";
 
 const Messages = ({ userId }) => {
@@ -26,7 +25,7 @@ const Messages = ({ userId }) => {
   async function fetchMessages() {
     const apiData = await API.graphql({ query: listMessages });
     const messagesFromAPI = apiData.data.listMessages.items;
-    setPosts(messagesFromAPI);
+    setMessages(messagesFromAPI);
   }
 
   async function createMessage(event) {
@@ -44,14 +43,14 @@ const Messages = ({ userId }) => {
     event.target.reset();
   }
 
-  async function deleteMessage({ id }) {
-    const newMessages = posts.filter((post) => post.id !== id);
-    setPosts(newMessages);
-    await API.graphql({
-      query: deleteMessageMutation,
-      variables: { input: { id } },
-    });
-  }
+  // async function deleteMessage({ id }) {
+  //   const newMessages = messages.filter((message) => message.id !== id);
+  //   setMessages(newMessages);
+  //   await API.graphql({
+  //     query: deleteMessageMutation,
+  //     variables: { input: { id } },
+  //   });
+  // }
 
   return (
     <View className="messages">
@@ -65,11 +64,8 @@ const Messages = ({ userId }) => {
             <Text as="strong" fontWeight={700}>
               {message.text}
             </Text>
-            <Text as="span">{post.description}</Text>
-            <Button variation="link" onClick={() => deletePost(post)}>
-              Delete message
-            </Button>
-          </Flex>
+            <Text as="span">{message.description}</Text>
+           </Flex>
         ))}
       </View>
       <View as="form" margin="3rem 0" onSubmit={createMessage}>
